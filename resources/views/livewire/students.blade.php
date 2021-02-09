@@ -1,5 +1,5 @@
-<div class="">
-  <table class="table-auto">
+<div class="py-12 px-12">
+  <table id="table_id" class="py-12 px-12 display table-auto">
     <thead>
       <tr>
         <th class="px-12 py-2">#</th>

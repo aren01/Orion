@@ -3,15 +3,27 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Books;
+use App\Models\Book;
+use App\Models\Catagories;
+use App\Models\Authors;
 class BooksForm extends Component
 {
+    public $cata;
+    public $autha;
+
+    public $catagoryarray=[];
+    public $authorarray=[];
+
     public $book_id, $bookname, $authorname, $category, $ISBN, $price;
 
 
     public function render()
     {
-        return view('livewire.books-form');
+      if(!empty($this->cata) && !empty($this->autha)) {
+        $this->catagoryarray = Catagories::where('id', $this->cata)->get();
+        $this->authorarray = Authors::where('id', $this->autha)->get();
+      }
+        return view('livewire.books-form')->withCatagories(Catagories::orderBy('catagory')->get())->withAuthors(Authors::orderBy('author')->get());
     }
 
     private function resetInputFields(){
@@ -33,10 +45,10 @@ class BooksForm extends Component
         'ISBN' => 'required',
         'price' => 'required',
 ]);
-        Books::updateOrCreate(['id' => $this->book_id], [
+        Book::updateOrCreate(['id' => $this->book_id], [
         'name' => $this->bookname,
-        'author' => $this->authorname,
-        'catagory' => $this->category,
+        'author_id' => $this->authorname,
+        'catagory_id' => $this->category,
         'isbn' => $this->ISBN,
         'price' => $this->price
 ]);

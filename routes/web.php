@@ -43,6 +43,14 @@ Route::group(['middleware' => [
       return view('catagory-form');
     })->name('AddCatagory');
 
+    Route::get('/Author', function () {
+      return view('author');
+    })->name('Author');
+
+    Route::get('/AddAuthor', function () {
+      return view('author-form');
+    })->name('AddAuthor');
+
     // Route::get(' AddBook', BooksForm::class)->name('AddBook');
 
     Route::get('/Students', function () {

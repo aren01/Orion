@@ -13,4 +13,12 @@ class Operations extends Model
   return DB::table('users')->get();
   }
 
+  public static function getCatagories() {
+  return DB::table('catagories')->get();
+  }
+
+  public static function getAuthors() {
+  return DB::table('authors')->get();
+  }
+
 }

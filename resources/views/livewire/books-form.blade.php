@@ -30,21 +30,49 @@ Link : https://dribbble.com/shots/10452538-React-UI-Components
             <label class="leading-loose">Book Name</label>
             <input type="text" wire:model="bookname" name="name" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Enter Book Name">
           </div>
-          <div class="flex flex-col">
+          <!-- <div class="flex flex-col">
             <label class="leading-loose">Author</label>
             <input type="text" wire:model="authorname" name="author" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Event title">
-          </div>
+          </div> -->
+
           <div class="flex flex-col">
+
+
+                    <label class="leading-loose">Author</label>
+                    <select name="author" wire:model="authorname" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
+                        <option value=''>Choose a Author</option>
+                        @foreach($authors as $author)
+                            <option value={{ $author->id }}>{{ $author->author }}</option>
+                        @endforeach
+                    </select>
+          </div>
+
+
+          <div class="flex flex-col">
+
+
+                    <label class="leading-loose">Catagory</label>
+                    <select name="category" wire:model="category" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600">
+                        <option value=''>Choose a Catagory</option>
+                        @foreach($catagories as $catagory)
+                            <option value={{ $catagory->id }}>{{ $catagory->catagory }}</option>
+                        @endforeach
+                    </select>
+          </div>
+
+
+
+          <!-- <div class="flex flex-col">
             <label class="leading-loose">Category</label>
             <input type="text" wire:model="category" name="category" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional">
-          </div>
+          </div> -->
           <div class="flex flex-col">
             <label class="leading-loose">ISBN</label>
-            <input type="text" wire:model="ISBN" name="isbn" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional">
+            <input type="number" wire:model="ISBN" name="isbn" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional">
           </div>
           <div class="flex flex-col">
             <label class="leading-loose">Price</label>
-            <input type="text" wire:model="price" name="price" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional">
+            <input type="number" wire:model="price" name="price" class="px-4 py-2 border focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 rounded-md focus:outline-none text-gray-600" placeholder="Optional">
           </div>
         </div>
         <div class="pt-4 flex items-center space-x-4">
