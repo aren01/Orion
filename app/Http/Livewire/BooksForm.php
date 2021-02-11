@@ -10,7 +10,7 @@ class BooksForm extends Component
 {
     public $cata;
     public $autha;
-
+    public $updateMode = false;
     public $catagoryarray=[];
     public $authorarray=[];
 
@@ -58,5 +58,37 @@ class BooksForm extends Component
 
 
        // return redirect('/books');
+    }
+
+
+    public function edit($id)
+    {
+    $this->updateMode = true;
+    $user = User::where('id',$id)->first();
+    $this->user_id = $id;
+    $this->name = $user->name;
+    $this->email = $user->email;
+
+    }
+    public function update()
+    {
+        $validatedDate = $this->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+        ]);
+
+        if ($this->bookid) {
+            $book = Book::find($this->bookid);
+            $book->update([
+              'name' => $this->bookname,
+              'author_id' => $this->authorname,
+              'catagory_id' => $this->category,
+              'isbn' => $this->ISBN,
+              'price' => $this->price
+            ]);
+            $this->emit('alert', ['type' => 'success', 'message' => 'Book edited successfully']);
+            $this->resetInputFields();
+
+        }
     }
 }

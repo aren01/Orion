@@ -21,4 +21,22 @@ class Operations extends Model
   return DB::table('authors')->get();
   }
 
+  public static function getTotalAuthors() {
+  return DB::table('authors')->count();
+  }
+
+  public static function getTotalCatagories() {
+  return DB::table('catagories')->count();
+  }
+
+  public static function getTotalStudents() {
+  return DB::table('users')->count();
+  }
+
+  public static function getTotalBooks() {
+  return DB::table('books')->count();
+  }
+
+
+
 }

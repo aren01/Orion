@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Livewire\BooksForm;
-
+use App\Http\Livewire\EditBooks;
+use App\Http\Livewire\EditCatagory;
+use App\Http\Livewire\EditAuthors;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -51,7 +52,19 @@ Route::group(['middleware' => [
       return view('author-form');
     })->name('AddAuthor');
 
-    // Route::get(' AddBook', BooksForm::class)->name('AddBook');
+    // Route::get('/EditBooks/{id}', function ($id) {
+    //   return view('editbooks-form', compact('id'));
+    // })->name('EditBooks');
+
+    Route::get('/EditBooks/{id}', [EditBooks::class, 'render']);
+    Route::post('/EditBooks/{id}/update', [EditBooks::class, 'update']);
+
+    Route::get('/EditAuthors/{id}', [EditAuthors::class, 'render']);
+    Route::post('/EditAuthors/{id}/update', [EditAuthors::class, 'update']);
+
+    Route::get('/EditCatagory/{id}', [EditCatagory::class, 'render']);
+    Route::post('/EditCatagory/{id}/update', [EditCatagory::class, 'update']);
+
 
     Route::get('/Students', function () {
       return view('students');

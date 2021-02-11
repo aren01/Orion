@@ -16,7 +16,7 @@
         <td class=""><?php echo $catagories->id; ?></td>
         <td class=""><?php echo $catagories->catagory; ?></td>
         <td class=""><?php echo $catagories->description; ?></td>
-        <td class=""><button wire:click="edit({{$catagories->id}})" class="py-2 px-6 text-white bg-yellow-500 rounded-lg border-2 border-white">Edit</button>
+        <td class=""><button class="py-2 px-6 text-white bg-yellow-500 rounded-lg border-2 border-white"><a href="/EditCatagory/{{$catagories->id}}">Edit</a></button>
           <button wire:click="destroy({{$catagories->id}})" class="py-2 px-6 text-white bg-red-500 rounded-lg border-2 border-white">Delete</button>
         </td>
 

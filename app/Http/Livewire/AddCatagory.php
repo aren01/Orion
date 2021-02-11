@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Catagory;
+use App\Models\Catagories;
 
 class AddCatagory extends Component
 {
@@ -28,7 +28,7 @@ class AddCatagory extends Component
       'catagoryname' => 'required',
       'catagorydescription' => 'required',
 ]);
-      Catagory::updateOrCreate(['id' => $this->catagory_id], [
+      Catagories::updateOrCreate(['id' => $this->catagory_id], [
       'catagory' => $this->catagoryname,
       'description' => $this->catagorydescription
 ]);
