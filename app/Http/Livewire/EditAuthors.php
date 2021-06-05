@@ -16,11 +16,11 @@ class EditAuthors extends Component
 
     public function update(Request $request, $id)
     {
-      $update = Authors::find($id);
-      $update->author = $request->input('authorname');
-      $update->description  = $request->input('authordescription');
-      $update->save();
-      return redirect('/Author');
+        $update = Authors::find($id);
+        $update->author = $request->input('authorname');
+        $update->description = $request->input('authordescription');
+        $update->save();
+        return redirect('/Author');
 
     }
 }

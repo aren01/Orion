@@ -18,7 +18,7 @@
 
               <div id="jh-stats-neutral" class="flex flex-col justify-center px-8 py-4 mt-4 bg-white border border-gray-300 rounded sm:mt-0">
                   <div>
-                      <p class="text-3xl font-semibold text-center text-gray-800">43</p>
+                      <p class="text-3xl font-semibold text-center text-gray-800">{{ $lends }}</p>
                       <p class="text-sm text-center text-gray-500">Current Lends</p>
                   </div>
               </div>

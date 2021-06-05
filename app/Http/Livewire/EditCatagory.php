@@ -16,11 +16,11 @@ class EditCatagory extends Component
 
     public function update(Request $request, $id)
     {
-      $update = Catagories::find($id);
-      $update->catagory = $request->input('catagoryname');
-      $update->description  = $request->input('catagorydescription');
-      $update->save();
-      return redirect('/Catagory');
+        $update = Catagories::find($id);
+        $update->catagory = $request->input('catagoryname');
+        $update->description = $request->input('catagorydescription');
+        $update->save();
+        return redirect('/Catagory');
 
     }
 }

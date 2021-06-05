@@ -1,7 +1,7 @@
 <div class="py-12">
-  <table id="table_id" class="py-12 px-12 display table-auto">
+  <table id="table_id" class="w-full border-collapse py-12 px-12 display table bg-white w-full">
     <thead>
-      <tr>
+      <tr class="border-b table-row">
         <th class="px-12 py-2">#</th>
         <th class="px-12 py-2">Book Name</th>
         <th class="px-12 py-2">Catagory</th>
@@ -15,7 +15,7 @@
       <?php
       foreach ($books as $book) {
         ?>
-      <tr>
+      <tr class="border-b">
         <td class="px-12 py-2"><?php echo $book->id; ?></td>
         <td class="px-12 py-2"><?php echo $book->name; ?></td>
         <td class="px-12 py-2"><?php echo $book->catagory; ?></td>

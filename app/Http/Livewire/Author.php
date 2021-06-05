@@ -17,11 +17,12 @@ class Author extends Component
 
     public function destroy($id)
     {
-    if ($id) {
-        $record = Authors::where('id', $id);
-        $record->delete();
-        $this->emit('alert', ['type' => 'success', 'message' => 'Author deleted successfully']);
-        // return redirect('/Books');
+        if ($id)
+        {
+            $record = Authors::where('id', $id);
+            $record->delete();
+            $this->emit('alert', ['type' => 'success', 'message' => 'Author deleted successfully']);
+        }
     }
-  }
+
 }

@@ -18,11 +18,12 @@ class Catagory extends Component
 
     public function destroy($id)
     {
-    if ($id) {
-        $record = Catagories::where('id', $id);
-        $record->delete();
-        $this->emit('alert', ['type' => 'success', 'message' => 'Catagory deleted successfully']);
-        // return redirect('/Books');
+        if ($id)
+        {
+            $record = Catagories::where('id', $id);
+            $record->delete();
+            $this->emit('alert', ['type' => 'success', 'message' => 'Catagory deleted successfully']);
+
+        }
     }
-  }
 }

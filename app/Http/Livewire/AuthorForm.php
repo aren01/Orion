@@ -14,27 +14,28 @@ class AuthorForm extends Component
         return view('livewire.author-form');
     }
 
-    private function resetInputFields(){
-    $this->author_id = '';
-    $this->authorname = '';
-    $this->authordescription = '';
-  }
+    private function resetInputFields()
+    {
+        $this->author_id = '';
+        $this->authorname = '';
+        $this->authordescription = '';
+    }
 
-  public function store()
-  {
-    $this->validate([
-      'authorname' => 'required',
-      'authordescription' => 'required',
-]);
-      Authors::updateOrCreate(['id' => $this->author_id], [
-      'author' => $this->authorname,
-      'description' => $this->authordescription
-]);
-     // $this->closeModal();
-     $this->resetInputFields();
-     $this->emit('alert', ['type' => 'success', 'message' => 'Author added successfully']);
+    public function store()
+    {
+        $this->validate(['authorname' => 'required', 'authordescription' => 'required', ]);
+        Authors::updateOrCreate(['id' => $this->author_id],
+        [
+          'author' => $this->authorname,
+          'description' => $this->authordescription
+        ]);
+        $this->resetInputFields();
+        $this->emit('alert', ['type' => 'success', 'message' => 'Author added successfully']);
 
+    }
 
-     // return redirect('/books');
-  }
+    public function back()
+    {
+      return redirect('Author');
+    }
 }

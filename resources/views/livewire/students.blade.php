@@ -18,7 +18,10 @@
         <td class=""><?php echo $student->name; ?></td>
         <td class=""><?php echo $student->email; ?></td>
         <td class=""><?php echo $student->created_at; ?></td>
-        <td><button class="text-white hover:text-red-500 py-2 px-2 bg-red-500 hover:bg-white rounded-lg border-2 border-grey-500">Hover me</button> </td>
+        <td>
+          <!-- <button wire:click="" class="py-2 px-6 text-white bg-red-500 rounded-lg border-2 border-white">Make Admin</button>
+          <button wire:click="" class="py-2 px-6 text-white bg-red-500 rounded-lg border-2 border-white">Disable</button> -->
+        </td>
 
 
       </tr>

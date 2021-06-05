@@ -12,6 +12,7 @@ class Dashboard extends Component
     {
         $totalStudents = Operations::getTotalStudents();
         $totalBooks = Operations::getTotalBooks();
-        return view('livewire.dashboard')->with('students', $totalStudents)->with('books', $totalBooks);
+        $totalLends = Operations::getTotalLends();
+        return view('livewire.dashboard')->with('students', $totalStudents)->with('books', $totalBooks)->with('lends', $totalLends);
     }
 }

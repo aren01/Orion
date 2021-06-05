@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use DB;
 class Operations extends Model
 {
+
   public static function getBooks() {
   return DB::table('books')->get();
   }
@@ -37,6 +38,8 @@ class Operations extends Model
   return DB::table('books')->count();
   }
 
-
+  public static function getTotalLends() {
+  return DB::table('lending')->count();
+  }
 
 }
