@@ -38,7 +38,7 @@ Route::group(['middleware' => [
     })->name('AddBook');
 
     Route::get('/Catagory', function () {
-      return view('Catagory');
+      return view('catagory');
     })->name('Catagory');
 
     Route::get('/AddCatagory', function () {
